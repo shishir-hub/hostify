@@ -1,0 +1,35 @@
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+
+    .container-wrapper{
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+
+            list-style: none;
+
+            a{
+                text-decoration: none;
+                font-family: "Archivo";
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 100%;
+                letter-spacing: 0%;
+                color: #000000;
+            }
+        }
+
+    }
+
+}
