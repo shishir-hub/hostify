@@ -13,7 +13,7 @@ type PageProps = {
   }>;
 };
 
-const BASE_URL = process.env.BASE_URL ?? "http://localhost:3000";
+const BASE_URL = process.env.REACT_APP_BASE_URL ?? "http://localhost:3000";
 
 const PropertyDetails = async ({ params }: PageProps) => {
   const { id } = await params;
