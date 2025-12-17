@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from "@/lib/validator";
 import z from "zod";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import axios from "axios";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useUserStore } from "@/store/userStore";
@@ -26,7 +26,7 @@ type Error = {
 const Login = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  
+
   const redirect = searchParams.get("redirect") || "/";
 
   const setUser = useUserStore((state) => state.setUser);
@@ -167,4 +167,10 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default function LoginLayout() {
+  return (
+    <Suspense fallback={<div>Loading....</div>}>
+      <Login />
+    </Suspense>
+  );
+}

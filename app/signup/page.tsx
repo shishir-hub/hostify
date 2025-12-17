@@ -11,7 +11,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signupSchema } from "@/lib/validator";
 import z from "zod";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import axios from "axios";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useUserStore } from "@/store/userStore";
@@ -24,13 +24,11 @@ type Error = {
   message: string;
 };
 
-type LoginPageProps = {
-  searchParams?: { [key: string]: string | undefined }
-}
-
-const Signup = ({ searchParams }: LoginPageProps) => {
+const Signup = () => {
   const router = useRouter();
-  const redirect = searchParams?.redirect || "/";
+  const searchParams = useSearchParams();
+
+  const redirect = searchParams.get("redirect") || "/";
 
   const setUser = useUserStore((state) => state.setUser);
   const showAlert = useAlertStore((state) => state.showAlert);
@@ -114,7 +112,12 @@ const Signup = ({ searchParams }: LoginPageProps) => {
             </div>
 
             <div className="button-wrapper">
-              <Button name="Sign Up" type="submit" style="primary" loading={submitting}/>
+              <Button
+                name="Sign Up"
+                type="submit"
+                style="primary"
+                loading={submitting}
+              />
             </div>
           </form>
 
@@ -163,4 +166,10 @@ const Signup = ({ searchParams }: LoginPageProps) => {
   );
 };
 
-export default Signup;
+export default function LoginLayout() {
+  return (
+    <Suspense fallback={<div>Loading....</div>}>
+      <Signup />
+    </Suspense>
+  );
+}
