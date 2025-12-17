@@ -120,4 +120,14 @@
       }
     }
   }
+
+  @media screen and (max-width: 1250px) {
+    flex-direction: column;
+    gap: 20px;
+
+    .booking-options, .about{
+      max-width: 100%;
+      padding-top: 0px;
+    }
+  }
 }

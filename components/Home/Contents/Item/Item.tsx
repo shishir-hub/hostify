@@ -27,14 +27,15 @@ const Item = ({
   return (
     <div className={`property-item-wrapper ${style}`}>
       <div className="like-button-wrapper">
-        <LikeButton id={item.id} />
+        <div className="like-button-container">
+          <LikeButton id={item.id} />
+        </div>
       </div>
       <Link href={`/property/${item.id}`} className="property-item">
         <div className="image-container">
           <Image
             src={item.image ? `${IMAGE_URL}${item.image}` : "/default-item.jpg"}
-            width={315}
-            height={300}
+            fill
             alt={`${item.name}'s Image`}
             style={{ objectFit: "cover" }}
           />

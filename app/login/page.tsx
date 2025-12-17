@@ -65,8 +65,6 @@ const Login = () => {
         router.push(redirect);
       })
       .catch((err) => {
-        console.log(err);
-
         setLoginError({
           state: true,
           message:

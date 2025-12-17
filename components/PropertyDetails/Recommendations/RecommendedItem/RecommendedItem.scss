@@ -1,26 +1,43 @@
 .property-item-wrapper.recommended-item {
   .like-button-wrapper {
-    left: 140px;
+    max-width: 43%;
   }
-
   .property-item {
     flex-direction: row;
 
     .image-container {
       max-width: 180px;
-      height: 130px;
-      img {
-        height: 100%;
-        border-radius: 10px 0 0 10px;
-      }
+      aspect-ratio: 180/130;
     }
 
-    .item-contents{
-        .upper{
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 12px;
+    .item-contents {
+      .upper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1250px) {
+    .like-button-wrapper {
+      max-width: 100%;
+    }
+    .property-item {
+      flex-direction: column;
+
+      .image-container {
+        aspect-ratio: 315 / 300;
+        max-width: 100%;
+      }
+
+      .item-contents {
+        .upper {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
         }
+      }
     }
   }
 }

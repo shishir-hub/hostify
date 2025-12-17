@@ -5,6 +5,10 @@
   flex-direction: column;
   gap: 20px;
 
+  @media screen and (max-width: 1250px){
+    max-width: 100%;
+  }
+
   .upper {
     width: 100%;
     display: flex;
