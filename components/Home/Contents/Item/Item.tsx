@@ -15,7 +15,7 @@ interface ItemInterface {
   ratings: number;
 }
 
-const IMAGE_URL = process.env.REACT_APP_IMAGE_URL || "";
+const IMAGE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const Item = ({
   item,

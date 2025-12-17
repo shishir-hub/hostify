@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 
 
-const JWT_SECRET = "random-jwt-secret-for-test-tt";
+const JWT_SECRET = `${process.env.JWT_SECRET}`;
 const JWT_EXPIRES_IN = "2d";
 
 
