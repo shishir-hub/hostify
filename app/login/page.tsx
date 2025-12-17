@@ -62,6 +62,7 @@ const Login = () => {
           setUser(res.data.user);
         }
         showAlert("Login Success", "success");
+        console.log("redirect", redirect);
         router.push(redirect);
       })
       .catch((err) => {
