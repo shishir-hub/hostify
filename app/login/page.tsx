@@ -12,6 +12,9 @@ import { loginSchema } from "@/lib/validator";
 import z from "zod";
 import { useState } from "react";
 import axios from "axios";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useUserStore } from "@/store/userStore";
+import { useAlertStore } from "@/store/alertStore";
 
 type LoginData = z.infer<typeof loginSchema>;
 
@@ -21,6 +24,13 @@ type Error = {
 };
 
 const Login = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect") || "/";
+
+  const setUser = useUserStore((state) => state.setUser);
+  const showAlert = useAlertStore((state) => state.showAlert);
+
   const {
     register,
     handleSubmit,
@@ -38,13 +48,24 @@ const Login = () => {
 
   const loginUser = (data: LoginData) => {
     setSubmitting(true);
+    loginError.state &&
+      setLoginError({
+        state: false,
+        message: "",
+      });
 
     axios
       .post("/api/auth/login", data)
       .then((res) => {
-        console.log(res.data);
+        if (res.data?.user) {
+          setUser(res.data.user);
+        }
+        showAlert("Login Success", "success");
+        router.push(redirect);
       })
       .catch((err) => {
+        console.log(err);
+
         setLoginError({
           state: true,
           message:
@@ -56,11 +77,17 @@ const Login = () => {
         setSubmitting(false);
       });
   };
-  
+
   return (
     <main className="login">
       <div className="container">
         <h1>Sign in</h1>
+
+        {loginError.state ? (
+          <p className="error-container">Login failed! {loginError.message}</p>
+        ) : (
+          <></>
+        )}
 
         <div className="inner-container">
           <form onSubmit={handleSubmit(loginUser)}>
@@ -82,7 +109,12 @@ const Login = () => {
             </div>
 
             <div className="button-wrapper">
-              <Button name="Sign In" type="submit" style="primary" />
+              <Button
+                name="Sign In"
+                type="submit"
+                style="primary"
+                loading={submitting}
+              />
             </div>
           </form>
 

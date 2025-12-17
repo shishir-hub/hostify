@@ -62,7 +62,7 @@ export const POST = async (req: Request) => {
 
   await writeJSON("users.json", users);
 
-  setAuthToken(token);
+  await setAuthToken(token);
 
   return NextResponse.json(
     {

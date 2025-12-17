@@ -1,0 +1,38 @@
+.booking-page{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    min-height: calc(100vh - 350px);
+
+    .container-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        p{
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: 2%;
+            text-align: center;
+            color: var(--dark);
+
+            &.title{
+                font-size: 24px;
+                font-weight: 700;
+            }
+        }
+
+        span{
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 100%;
+            letter-spacing: 2%;
+            text-align: center;
+            color: var(--primary);
+        }
+    }
+}

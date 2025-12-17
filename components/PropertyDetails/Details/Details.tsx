@@ -68,7 +68,9 @@ const Details = ({ data, id }: { data: any; id: string }) => {
             )}
           </div>
 
-          <Button name="Book this home" type="button" style="primary" />
+          <Link href={`/property/${id}/book`} style={{textDecoration: "none"}}>
+            <Button name="Book this home" type="button" style="primary" />
+          </Link>
         </div>
       </div>
 

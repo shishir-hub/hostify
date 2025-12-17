@@ -17,6 +17,7 @@
   white-space: nowrap;
 
   transition: all 0.3s ease-in-out;
+  position: relative;
 
   &:hover {
     background-color: #ffffff;
@@ -29,25 +30,55 @@
 
     &:hover {
       background-color: var(--primary);
-      color: #FFFFFF;
+      color: #ffffff;
     }
   }
 
-  &.gray{
-    border: 2px solid #171E1D;
+  &.gray {
+    border: 2px solid #171e1d;
     background-color: #ffffff;
-    color: #171E1D;
+    color: #171e1d;
 
     &:hover {
-      background-color: #171E1D;
-      color: #FFFFFF;
+      background-color: #171e1d;
+      color: #ffffff;
     }
   }
 
-  &:disabled, &:disabled:hover{
-    background-color: #9CA3AF;
-    color: #E5E7EB;
+  &:disabled,
+  &:disabled:hover {
+    background-color: #9ca3af;
+    color: #e5e7eb;
     cursor: not-allowed;
-    border: 2px solid #9CA3AF;
+    border: 2px solid #9ca3af;
+  }
+
+  p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 6px;
+    background-color: inherit;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      animation: loader 1s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes loader {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
   }
 }

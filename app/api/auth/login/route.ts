@@ -56,7 +56,7 @@ export const POST = async (req: Request) => {
 
   const token = generateToken(userObj);
 
-  setAuthToken(token);
+  await setAuthToken(token);
 
   return NextResponse.json(
     {

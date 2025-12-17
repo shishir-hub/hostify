@@ -141,7 +141,7 @@ const Contents = () => {
               name={`Show ${pageNo === totalPages ? "less" : "more"}`}
               type="button"
               style="secondary"
-              disabled={loading || loadingNextPage}
+              loading={loading || loadingNextPage}
               handleClick={getMoreProperties}
             />
           </div>
