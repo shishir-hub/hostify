@@ -1,0 +1,20 @@
+[
+  {
+    "id": "b06c50e0-621d-426a-8d72-38ca14b2f443",
+    "email": "shishir.gaire11@gmail.com",
+    "name": "Michelle Ward",
+    "image": "/user-images/1.jpg",
+    "created_at": "2021-05-16T15:43:22.475Z",
+    "is_super_host": true,
+    "password": "$2b$12$aizatYU.apw97hOw8zuI9.HZ6MVnp6CVK7F9s6NqHGUyExRoepX3q"
+  },
+  {
+    "id": "451da870-d165-42cf-a086-3364b0c0de07",
+    "name": "Shishir Gaire",
+    "email": "darshangaire@gmail.com",
+    "created_at": "2025-12-16T16:55:06.837Z",
+    "is_super_host": false,
+    "password": "$2b$12$Hd4BIE/daBWRYAzI9/q3Z.H3sdTpEcI7a6Xk7hmgdsQnIIz5Wx45i",
+    "image": null
+  }
+]

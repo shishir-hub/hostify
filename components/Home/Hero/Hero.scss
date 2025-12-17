@@ -1,0 +1,42 @@
+.home-page-hero {
+  background-image: url("/hero.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  padding: 50px 20px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      h1 {
+        font-size: 40.4px;
+        font-weight: 700;
+        line-height: 110.00000000000001%;
+        color: #000000;
+
+        span {
+          color: var(--primary);
+        }
+      }
+
+      h4 {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 120%;
+        color: #000000;
+      }
+    }
+  }
+}

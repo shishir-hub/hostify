@@ -1,0 +1,123 @@
+.property-descriptions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e8ecf2;
+
+  .about {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .title {
+      font-size: 24px;
+      line-height: 100%;
+      letter-spacing: 2%;
+      font-weight: 600;
+
+      color: #171e1d;
+    }
+
+    .desc {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .desc-container {
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+
+        div {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 17px;
+
+          p {
+            font-size: 16px;
+            line-height: 160%;
+            letter-spacing: 0;
+            font-weight: 400;
+            color: #171e1d;
+
+            span {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+
+      .show-more {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0.46px;
+        font-weight: 600;
+
+        color: var(--primary);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .booking-options {
+    padding-top: 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    width: 100%;
+    max-width: 500px;
+
+    .item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .icon {
+        width: 60px;
+        height: 60px;
+        background-color: #fac50a3d;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 8px;
+
+        svg {
+          width: 24px;
+          height: 24px;
+          color: var(--primary);
+        }
+      }
+
+      .b-o-details {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        p {
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 150%;
+          letter-spacing: 2%;
+          color: #171e1d;
+        }
+
+        span {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 150%;
+          letter-spacing: 2%;
+          color: #7a7a7a;
+        }
+      }
+    }
+  }
+}

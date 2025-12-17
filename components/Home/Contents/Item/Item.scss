@@ -1,0 +1,126 @@
+.property-item-wrapper {
+  width: 100%;
+  position: relative;
+
+  .like-button-wrapper {
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .super-host-tag {
+    border-radius: 13px;
+    background-color: #ffffff;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--primary);
+  }
+
+  .property-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #e8ecf2;
+    border-radius: 10px;
+    text-decoration: none;
+
+    .image-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+      }
+    }
+
+    .item-contents {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 16px;
+
+      .upper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+
+        .name-loc {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+
+          .name {
+            font-size: 16px;
+            line-height: 16px;
+            letter-spacing: 2%;
+            font-weight: 600;
+            color: var(--dark);
+          }
+
+          .loc {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 14px;
+            letter-spacing: 2%;
+            color: #787878;
+          }
+        }
+
+        .ratings {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+
+          p {
+            font-size: 14px;
+            line-height: 100%;
+            letter-spacing: 2%;
+            font-weight: 600;
+            color: var(--dark);
+          }
+
+          svg {
+            width: 13px;
+            height: 13px;
+            color: #fac50a;
+            flex-shrink: 0;
+          }
+        }
+      }
+
+      .price {
+        font-size: 19px;
+        font-weight: 600;
+        color: var(--dark);
+        letter-spacing: 2%;
+
+        span {
+          font-size: 14px;
+          font-weight: 400;
+          color: #787878;
+        }
+      }
+    }
+  }
+}

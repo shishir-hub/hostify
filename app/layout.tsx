@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo } from "next/font/google";
+import { Archivo, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
@@ -8,6 +8,12 @@ const archivo = Archivo({
   subsets: ["latin"],
   weight: ["100","200","300","400","500","600","700","800","900"],
   variable: "--font-archivo",
+});
+
+export const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["100","300","400","500","700","900"],
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${archivo.variable} antialiased`}
+        className={`${archivo.variable} ${roboto.variable} antialiased`}
       >
         <Navbar />
         {children}

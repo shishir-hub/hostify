@@ -1,0 +1,36 @@
+.like-button {
+  width: 100%;
+  height: 100%;
+
+  max-width: 36px;
+  max-height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ffffff;
+  padding: 8px;
+  border: 1px solid #E8ECF2;
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+
+  svg {
+    width: 100%;
+    height: 100%;
+
+    color: var(--dark);
+
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.liked {
+    background-color: #07c4a2;
+
+    svg {
+      color: #ffffff;
+    }
+  }
+}

@@ -1,9 +1,11 @@
+import Contents from "@/components/Home/Contents/Contents";
+import Hero from "@/components/Home/Hero/Hero";
 
 export default function Home() {
   return (
-    <div className="">
-      <main className="">
-      </main>
-    </div>
+    <main style={{ width: "100%" }}>
+      <Hero />
+      <Contents />
+    </main>
   );
 }
