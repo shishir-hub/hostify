@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import "./Navbar.scss";
+import Navigation from "./Navigation";
 
 const Navbar = () => {
   const navigations = [
@@ -29,7 +30,7 @@ const Navbar = () => {
           style={{ objectFit: "contain" }}
         />
 
-        <nav>
+        <nav className="desktop">
           <ul>
             {navigations.map((nav, i) => {
               return (
@@ -40,6 +41,8 @@ const Navbar = () => {
             })}
           </ul>
         </nav>
+
+        <Navigation />
       </div>
     </header>
   );

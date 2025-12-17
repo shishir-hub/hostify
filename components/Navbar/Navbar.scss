@@ -1,40 +1,131 @@
-.navbar{
-    width: 100%;
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  background-color: #ffffff;
+  border: 1px solid #e8ecf2;
+
+  .desktop {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .container-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 14px 20px;
+    justify-content: space-between;
 
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1001;
-    background-color: #FFFFFF;
-    border: 1px solid #E8ECF2;
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 50px;
+      height: 40px;
+      z-index: 3;
+      position: relative;
+    //   border: 1.5px solid #878b90;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      transition: all 0.3s ease-in-out;
 
-    .container-wrapper{
+      span {
+        position: absolute;
+        left: 10px;
+        width: 30px;
+        height: 2px;
+        display: block;
+        background-color: #878b90;
+        rotate: 0deg;
+        transition: all 0.4s ease-in-out;
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        ul{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-
-            list-style: none;
-
-            a{
-                text-decoration: none;
-                font-family: "Archivo";
-                font-weight: 400;
-                font-size: 14px;
-                color: #000000;
-            }
+        &.opt {
+          bottom: 10px;
         }
 
+        &.op {
+          top: 10px;
+        }
+      }
     }
 
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        font-family: "Archivo";
+        font-weight: 400;
+        font-size: 14px;
+        color: #000000;
+      }
+    }
+
+    @media screen and (max-width: 500) {
+      .desktop {
+        display: none;
+      }
+
+      .mobile {
+        display: block;
+      }
+
+      ul {
+        position: absolute;
+        right: -100%;
+        top: 0;
+        background-color: #ffffff;
+        height: 100vh;
+        z-index: 2;
+
+        align-items: flex-end;
+        justify-content: flex-start;
+
+        flex-direction: column;
+        padding: 100px 40px 40px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      nav.active {
+        ul {
+          right: 0;
+        }
+
+        .menu {
+          height: 50px;
+          border-radius: 50%;
+        //   border: 1.5px solid #ef4444;
+          margin-bottom: 0px;
+
+          span {
+            width: 30px;
+            top: 22px;
+            left: 9px;
+            rotate: 45deg;
+            background-color: #ef4444;
+
+            &.op {
+              rotate: -45deg;
+            }
+          }
+        }
+      }
+    }
+  }
 }
