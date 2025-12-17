@@ -23,13 +23,11 @@ type Error = {
   message: string;
 };
 
-type LoginPageProps = {
-  searchParams?: { [key: string]: string | undefined }
-}
-
-const Login = ({ searchParams }: LoginPageProps) => {
+const Login = () => {
   const router = useRouter();
-  const redirect = searchParams?.redirect || "/";
+  const searchParams = useSearchParams();
+  
+  const redirect = searchParams.get("redirect") || "/";
 
   const setUser = useUserStore((state) => state.setUser);
   const showAlert = useAlertStore((state) => state.showAlert);
