@@ -32,7 +32,7 @@ export const POST = async (req: Request) => {
   if (!exists) {
     return NextResponse.json(
       { message: "User with this email not found." },
-      { status: 400 }
+      { status: 404 }
     );
   }
 
