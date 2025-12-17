@@ -1,10 +1,8 @@
 import { verifyTokenInRoute } from "@/middleware/verifyTokenInRoute";
 import "./BookingPage.scss";
 
-const BookingPage = async () => {
-  console.log("booking page here");
-  
-    // await verifyTokenInRoute();
+const BookingPage = async () => {  
+    await verifyTokenInRoute();
   return (
     <div className="booking-page">
       <div className="container-wrapper">
