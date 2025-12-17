@@ -13,17 +13,19 @@ type PageProps = {
   }>;
 };
 
+const BASE_URL = process.env.BASE_URL ?? "http://localhost:3000";
+
 const PropertyDetails = async ({ params }: PageProps) => {
   const { id } = await params;
 
-  const respone = await fetch(`http://localhost:3000/api/properties/${id}`, {
+  const respone = await fetch(`${BASE_URL}/api/properties/${id}`, {
     cache: "no-store",
   });
   const responseJSON = await respone.json();
 
   const propertyDetails = responseJSON?.property;
   const similarStays = responseJSON?.similarStays ?? [];
-  
+
   return (
     <main className="property-details">
       <div className="container-wrapper">
@@ -41,7 +43,7 @@ const PropertyDetails = async ({ params }: PageProps) => {
           </div>
         </div>
 
-        <Recommendations id={id} similarStays={similarStays}/>
+        <Recommendations id={id} similarStays={similarStays} />
       </div>
     </main>
   );
